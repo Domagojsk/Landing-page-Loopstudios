@@ -158,4 +158,164 @@ a {
   color: #8c8c8c;
   line-height: 1.7;
 }
+
+.creations-container {
+  min-height: 85.6rem;
+  padding: 5rem;
+}
+
+.creations-container .creations-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 3rem 0;
+}
+
+.creations-container h3 {
+  font-size: 3.2rem;
+  color: black;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.creations-container button {
+  display: inline-block;
+  padding: 0.9rem 2.3rem 0.8rem 2.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid dimgray;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 3px;
+  letter-spacing: 0.3rem;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.creations-container button:hover {
+  color: white;
+  background-color: black;
+}
+
+.creations-container .creations-gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+}
+
+.creations-container h4 {
+  position: absolute;
+  font-size: 2.2rem;
+  color: white;
+  bottom: 1.7rem;
+  left: 1.5rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding: 0 8rem 0 1.5rem;
+}
+
+.creations-container .creations-img {
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.creations-container .creations-img:hover {
+  opacity: 0.4;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.creations-container img {
+  min-height: 29.8rem;
+  min-width: 17rem;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.creations-container .earth {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.creations-container .arcade {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.creations-container .soccer {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 3 / 2 / 4;
+}
+
+.creations-container .grid {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 4 / 2 / 5;
+}
+
+.creations-container .above {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.creations-container .borealis {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.creations-container .curiosity {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.creations-container .fisheye {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 4 / 3 / 5;
+}
 /*# sourceMappingURL=main.css.map */
