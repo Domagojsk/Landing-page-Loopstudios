@@ -55,6 +55,13 @@ header {
     display: none;
   }
 
+  .close-menu {
+    font-size: 1.9rem;
+    color: $White;
+    cursor: pointer;
+    display: none;
+  }
+
   .title {
     border: 2px solid $White;
     max-width: 43.5rem;
