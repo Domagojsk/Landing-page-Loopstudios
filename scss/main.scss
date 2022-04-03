@@ -12,6 +12,20 @@
   width: 83%;
   margin: auto;
 
+  @include respond(larger) {
+    width: 55%;
+  }
+
+  @include respond(large) {
+    @include flex(center, center, column);
+  }
+
+  @include respond(small) {
+    width: 100%;
+    padding: 8rem 2rem;
+    min-height: 100vh;
+  }
+
   .img-responsive {
     display: block;
     background-position: center;
@@ -19,6 +33,17 @@
     background-size: cover;
     height: 33.8rem;
     max-width: 100%;
+
+    @include respond(medium) {
+      height: 25rem;
+    }
+
+    @include respond(small) {
+      background: url(/mobile/image-interactive.jpg);
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
   }
 
   .interactive-text {
@@ -27,13 +52,33 @@
     max-width: 42rem;
     width: 90%;
     object-fit: cover;
-    /* min-height: 30rem; */
-    /* width: 90%; */
     background-color: $White;
     top: 42%;
     left: 49%;
     padding: 6.5rem;
     text-align: left;
+
+    @include respond(large) {
+      position: relative;
+      left: 0;
+      width: 100%;
+      max-width: 80vw;
+      text-align: center;
+      padding: 5rem;
+      margin-top: 5rem;
+    }
+
+    @include respond(medium) {
+      font-size: 2rem;
+      padding: 1rem;
+      margin-top: 8rem;
+    }
+
+    @include respond(small) {
+      margin-top: 5rem;
+      max-width: 100vw;
+      padding: 2rem;
+    }
   }
 
   h2 {
@@ -41,6 +86,14 @@
     color: $Black;
     font-family: $josefin-family;
     text-transform: uppercase;
+
+    @include respond(medium) {
+      font-size: 2rem;
+    }
+
+    @include respond(small) {
+      font-weight: 400;
+    }
   }
 
   p {
@@ -55,10 +108,25 @@
 .creations-container {
   min-height: 85.6rem;
   padding: 5rem;
+  @include respond(medium) {
+    padding: 2rem 3rem;
+    min-height: 118rem;
+  }
+  @include respond(small) {
+    padding: 2rem 1rem;
+  }
 
   .creations-header {
     @include flex(space-between, center, row);
     padding: 3rem 0;
+
+    @include respond(medium) {
+      flex-direction: column;
+    }
+
+    @include respond(small) {
+      position: relative;
+    }
   }
 
   h3 {
@@ -67,6 +135,16 @@
     font-family: $josefin-family;
     font-weight: 300;
     text-transform: uppercase;
+
+    @include respond(medium) {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+    @include respond(small) {
+      margin-bottom: 1rem;
+      font-size: 2.4rem;
+      font-family: 400;
+    }
   }
 
   button {
@@ -81,6 +159,12 @@
     border-radius: 3px;
     letter-spacing: 0.3rem;
     transition: all 0.3s ease-out;
+
+    @include respond(small) {
+      position: absolute;
+      bottom: -95rem;
+      font-size: 1.5rem;
+    }
 
     &:hover {
       color: $White;
@@ -101,10 +185,22 @@
       grid-column-gap: 2rem;
       grid-row-gap: 2rem;
     }
+
+    @include respond(medium) {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(8, 1fr);
+    }
+
+    @include respond(small) {
+      padding-bottom: 6rem;
+      grid-row-gap: 1rem;
+    }
   }
 
   h4 {
     position: absolute;
+    text-align: left;
     font-size: 2.2rem;
     color: $White;
     bottom: 1.7rem;
@@ -113,6 +209,15 @@
     text-transform: uppercase;
     font-weight: 300;
     padding: 0 8rem 0 1.5rem;
+
+    @include respond(small) {
+      bottom: 1rem;
+      left: 1rem;
+      padding: 0;
+      max-width: 55%;
+      font-weight: 400;
+      margin: auto;
+    }
   }
 
   .creations-img {
@@ -132,8 +237,24 @@
     height: 100%;
     width: 100%;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    display: block;
+
+    @include respond(medium) {
+      height: 10rem;
+      width: 26rem;
+      min-height: 100%;
+      min-width: 100%;
+    }
+    @include respond(small) {
+      background-position: center;
+      background-size: cover;
+      min-width: none;
+      min-height: none;
+      width: 100%;
+    }
   }
 
   .earth {
@@ -141,47 +262,152 @@
     @include respond(large) {
       grid-area: 1 / 1 / 2 / 2;
     }
+    @include respond(medium) {
+      grid-area: 1 / 1 / 2 / 2;
+    }
   }
+
+  .earth-mobile {
+    @include respond(medium) {
+      background: url(/mobile/image-deep-earth.jpg);
+    }
+    @include respond(small) {
+      background: url(/mobile/image-deep-earth.jpg);
+    }
+  }
+
   .arcade {
     grid-area: 1 / 2 / 2 / 3;
     @include respond(large) {
       grid-area: 1 / 2 / 2 / 3;
     }
+    @include respond(medium) {
+      grid-area: 2 / 1 / 3 / 2;
+      background-position: bottom;
+    }
   }
+
+  .arcade-mobile {
+    @include respond(medium) {
+      background-image: url(/mobile/image-night-arcade.jpg);
+    }
+    @include respond(small) {
+      background-image: url(/mobile/image-night-arcade.jpg);
+    }
+  }
+
   .soccer {
     grid-area: 1 / 3 / 2 / 4;
     @include respond(large) {
       grid-area: 2 / 1 / 3 / 2;
     }
+    @include respond(medium) {
+      grid-area: 3 / 1 / 4 / 2;
+    }
   }
+
+  .soccer-mobile {
+    @include respond(medium) {
+      background-image: url(/mobile/image-soccer-team.jpg);
+    }
+    @include respond(small) {
+      background-image: url(/mobile/image-soccer-team.jpg);
+    }
+  }
+
   .grid {
     grid-area: 1 / 4 / 2 / 5;
     @include respond(large) {
       grid-area: 2 / 2 / 3 / 3;
     }
+    @include respond(medium) {
+      grid-area: 4 / 1 / 5 / 2;
+    }
   }
+
+  .grid-mobile {
+    @include respond(medium) {
+      background-image: url(/mobile/image-grid.jpg);
+    }
+
+    @include respond(small) {
+      background-image: url(/mobile/image-grid.jpg);
+    }
+  }
+
   .above {
     grid-area: 2 / 1 / 3 / 2;
     @include respond(large) {
       grid-area: 3 / 1 / 4 / 2;
     }
+    @include respond(medium) {
+      grid-area: 5 / 1 / 6 / 2;
+    }
   }
+
+  .above-mobile {
+    @include respond(medium) {
+      background-image: url(/mobile/image-from-above.jpg);
+    }
+    @include respond(small) {
+      background-image: url(/mobile/image-from-above.jpg);
+    }
+  }
+
   .borealis {
     grid-area: 2 / 2 / 3 / 3;
     @include respond(large) {
       grid-area: 3 / 2 / 4 / 3;
     }
+    @include respond(medium) {
+      grid-area: 6 / 1 / 7 / 2;
+    }
   }
+
+  .borealis-mobile {
+    @include respond(medium) {
+      background-image: url(/mobile/image-pocket-borealis.jpg);
+    }
+    @include respond(small) {
+      background-image: url(/mobile/image-pocket-borealis.jpg);
+    }
+  }
+
   .curiosity {
     grid-area: 2 / 3 / 3 / 4;
     @include respond(large) {
       grid-area: 4 / 1 / 5 / 2;
     }
+    @include respond(medium) {
+      grid-area: 7 / 1 / 8 / 2;
+    }
   }
+
+  .curiosity-mobile {
+    @include respond(medium) {
+      background-image: url(/mobile/image-curiosity.jpg);
+    }
+    @include respond(small) {
+      background-image: url(/mobile/image-curiosity.jpg);
+    }
+  }
+
   .fisheye {
     grid-area: 2 / 4 / 3 / 5;
     @include respond(large) {
       grid-area: 4 / 2 / 5 / 3;
+    }
+    @include respond(medium) {
+      grid-area: 8 / 1 / 9 / 2;
+    }
+  }
+
+  .fisheye-mobile {
+    @include respond(medium) {
+      background-image: url(/mobile/image-fisheye.jpg);
+    }
+    @include respond(small) {
+      background-image: url(/mobile/image-fisheye.jpg);
     }
   }
 }
@@ -190,13 +416,31 @@ footer {
   background-color: $Black;
   padding: 4.5rem;
 
+  @include respond(medium) {
+    min-height: 40rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 5rem 2rem;
+  }
+
   .social-links {
     @include flex(space-between, center, row);
+
+    @include respond(medium) {
+      flex-direction: column;
+    }
   }
 
   .links-icons {
     display: inline-block;
     padding: 0 1rem;
+
+    @include respond(medium) {
+      position: absolute;
+      bottom: 8rem;
+      padding: 1rem;
+    }
   }
 
   .links-icons i {
@@ -204,6 +448,15 @@ footer {
     color: $White;
     padding-left: 2rem;
     position: relative;
+
+    @include respond(medium) {
+      font-size: 2.3rem;
+      padding: 0 1rem;
+    }
+
+    @include respond(small) {
+      padding: 0 0.5rem;
+    }
 
     &::after {
       content: '';
@@ -215,6 +468,11 @@ footer {
       bottom: -0.5rem;
       background-color: $White;
       transition: width 0.2s ease;
+
+      @include respond(medium) {
+        left: 0.5rem;
+        bottom: -0.7rem;
+      }
     }
 
     &:hover::after {
@@ -227,12 +485,21 @@ footer {
     padding-top: 3rem;
   }
 
-  nav {
+  .footer-nav {
     @include flex(space-between, center, row);
+
+    @include respond(medium) {
+      @include flex(space-between, center, column);
+      font-size: 1.2rem;
+    }
   }
 
   .bottom-menu {
     display: flex;
+    @include respond(medium) {
+      @include flex(space-evenly, center, column);
+      gap: 2rem;
+    }
   }
 
   .links {
@@ -242,26 +509,46 @@ footer {
     position: relative;
     font-family: $alata-family;
 
+    @include respond(small) {
+      padding: 0;
+    }
+
     &::after {
       content: '';
       position: absolute;
       width: 0;
       opacity: 0;
       height: 2px;
-      right: 2.5rem;
-      bottom: -0.1rem;
+      right: 2.8rem;
+      bottom: -0.3rem;
       background-color: $White;
-      transition: width 0.2s ease;
+      transition: width 0.4s ease;
+
+      @include respond(small) {
+        right: 1rem;
+      }
     }
 
     &:hover::after {
       opacity: 1;
       width: 40%;
+      @include respond(small) {
+        width: 50%;
+      }
     }
   }
 
   h5 {
     color: $Dark-Gray;
     padding-right: 0.5rem;
+
+    @include respond(medium) {
+      position: absolute;
+      bottom: 5rem;
+      font-size: 1.3rem;
+    }
+    @include respond(small) {
+      font-size: 1rem;
+    }
   }
 }

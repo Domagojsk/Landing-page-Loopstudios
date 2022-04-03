@@ -8,11 +8,30 @@ header {
   background-blend-mode: darken;
   min-height: 43.4rem;
   height: 100%;
+  @include respond(large) {
+    padding: 4.2rem 7rem;
+  }
+
+  @include respond(medium) {
+    padding: 3.5rem 2rem;
+    background: url(/mobile/image-hero.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  @include respond(small) {
+    min-height: 100vh;
+    padding: 5rem 2rem;
+  }
 
   .logo {
     width: 12.3rem;
     height: 100%;
     cursor: pointer;
+    @include respond(medium) {
+      z-index: 1000;
+      width: 10rem;
+    }
   }
 
   nav {
@@ -21,6 +40,25 @@ header {
 
   .main-menu {
     display: flex;
+
+    @include respond(medium) {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 999;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      background: $Black;
+      transition: top 1s ease;
+      padding: 0 2rem;
+      gap: 2rem;
+      font-size: 2rem;
+      display: none;
+    }
   }
 
   .links {
@@ -53,13 +91,27 @@ header {
     color: $White;
     cursor: pointer;
     display: none;
+
+    @include respond(medium) {
+      display: block;
+    }
   }
 
   .close-menu {
-    font-size: 1.9rem;
-    color: $White;
+    height: 2rem;
     cursor: pointer;
     display: none;
+
+    @include respond(medium) {
+      display: block;
+      position: absolute;
+      top: 3.7rem;
+      right: 2rem;
+    }
+
+    @include respond(small) {
+      top: 5rem;
+    }
   }
 
   .title {
@@ -68,6 +120,15 @@ header {
     padding: 2.6rem 2.6rem 2.8rem 2.8rem;
     color: $White;
     margin-top: 8.7rem;
+
+    @include respond(medium) {
+      max-width: 30rem;
+      padding: 2rem;
+      margin: auto;
+    }
+    @include respond(small) {
+      padding: 1rem;
+    }
   }
 
   h1 {
@@ -76,5 +137,11 @@ header {
     line-height: 1.1;
     text-transform: uppercase;
     font-weight: 300;
+    @include respond(medium) {
+      font-size: 2.7rem;
+    }
+    @include respond(small) {
+      font-size: 2.8rem;
+    }
   }
 }
